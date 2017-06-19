@@ -26,7 +26,7 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
   app.use(config.location, express.static(path.join(__dirname, '../www')))
 }
 //海报静态资源服务
-app.use('/static', express.static(path.join(__dirname, '../resource')))
+app.use(config.location + '/static', express.static(path.join(__dirname, '../resource')))
 
 //载入处理请求体的中间件
 app.use(bodyParser.urlencoded({extended: false}))
