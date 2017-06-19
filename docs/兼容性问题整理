@@ -1,0 +1,20 @@
+天津广电盒子( 深圳同洲中间件) 前端开发 兼容性问题整理
+
+1.背景色不能设置透明度
+2.定位可以使用 相对定位 绝对定位都可以使用
+3.可以支持jQuery 1.4.2及以下版本  但只支持id选择器 可以操作样式和类名  如$(‘#demo’).css()  $(‘#demo’).addClass()等
+4.盒子上的遥控器按键事件 如上下左右enter键 可以按照电脑键盘事件来设置
+5.不支持css3的边框圆角
+6.不支持JSON.parse()  JSON.stringify() 可以使用eval解析json数据
+7.可以使用XMLHttpRequest对象来发送请求
+8.字符串的indexOf 、 slice方法可以使用
+10.支持setAttribute getAttribute方法
+11.背景色不支持opacity属性 但字体和图片支持透明度
+12.元素浮动后 父容器宽度不够 元素也不会换行
+13.背景图片设置时 不可使用background-size属性
+14.支持marquee文字滚动标签
+15.Utility全局对象设置环境变量
+19. 支持alert()方法
+20.按键事件函数  return 0 阻止按键事件传送到系统层  return 1 按键事件传送至系统层
+21.常用键值：退出键 27 返回键 640  上页 34 下页 33
+22.支持 DOM2事件 addEventListener绑定事件

@@ -1,0 +1,20 @@
+{
+  "name": "hicamp_tv_app",
+  "script": "index.js",
+  "args": [],
+  "interpreter": "node",
+  "interpreter_args": [],
+  "env": {
+    "NODE_ENV": "production",
+    "HOST": "0.0.0.0",
+    "PORT": 8088,
+    "PARENT_CHOOSE_LIMIT": 10,
+    "USE_HISTORY_LIMIT": 10,
+    "LOCATION": "/tv",
+    "TPS_HOST": "http://47.93.116.9:15025",
+    "CBS_HOST": "http://47.93.116.9:15045",
+    "ASSETS_HOST": "http://47.93.116.9:15020/Application",
+    "AREA_CODE": "10100003",
+    "WEBSITE_CODE": "WS20170415001"
+  }
+}

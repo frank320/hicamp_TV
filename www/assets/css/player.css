@@ -1,0 +1,6 @@
+.recommendation {
+  position: absolute;
+  left: 64px;
+  bottom: 20px;
+  z-index: 99;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>嗨学营</title>
+  <link rel="stylesheet" href={{prefix+"/assets/css/common.css"}}>
+  <link rel="stylesheet" href={{prefix+"/assets/css/vList.css"}}>
+</head>
+<body>
+<div class="container">
+  <!--首页展示栏目-->
+  <div class="column">
+    <div class="title">
+      <span>{{album_name}} </span><span class='count'>( <i
+      id='count'>{{totalcount>0?1:0}}</i>  / {{totalcount}} )</span>
+    </div>
+    <ul>
+      {{each data as value index}}
+      <li contentcode="{{value.contentcode}}" datacode="{{value.datacode}}"
+          contentname="{{value.contentname}}">
+        <img
+          src="{{value.posterurl}}"
+          alt="">
+        <div class="name">
+          {{if value.contentname.length>9}}
+          <marquee direction="left" behavior="scroll" scrollamount="6" scrolldelay="0" align="absmiddle"
+                   hspace="0" vspace="0" width=164 height=24 style='display: none;'>
+            {{value.contentname}}
+          </marquee>
+          {{/if}}
+          {{value.contentname.split(' ')[0]}}
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+    <div class="page">
+      <span>第 {{maxPage==0?0:page}} 页 / 共 {{maxPage}} 页</span>
+    </div>
+  </div>
+  <!--弹框提示-->
+  <div id="orderTip" class='tip' style='position: absolute;z-index: 8'>
+    <div class="title" style='font-size: 24px'>您尚未订购此产品或者产品已到期,是否去往订购页面 ?</div>
+    <div class="btns" style='margin-top: 30px;'>
+      <div class='no'>取消</div>
+      <div class='yes'>确定</div>
+    </div>
+  </div>
+  <!--结果弹窗-->
+  <div class='tip' id='msgTip' style='position: absolute;z-index: 8'>
+    <div class='title' style='font-size: 28px;margin-top: 90px;'>正在下单支付,请稍后...</div>
+  </div>
+  <!--上下翻页箭头-->
+  {{if maxPage>1&&maxPage==page}}
+  <div id="upArrow" style='position: absolute;top: 14px;left: 609px;'>
+    <img src="{{prefix+'/assets/img/up_arrow.gif'}}" alt="" style='width: 60px;height: 30px;'>
+  </div>
+  {{/if}}
+  {{if maxPage>page}}
+  <div id="downArrow" style='position: absolute;bottom: 14px;left: 609px;'>
+    <img src="{{prefix+'/assets/img/down_arrow.gif'}}" alt="" style='width: 60px;height: 30px;'>
+  </div>
+  {{/if}}
+</div>
+
+<script>
+  var cbsHost = '{{cbsHost}}'
+  var page = '{{page}}'
+  var maxPage = '{{maxPage}}'
+  var prefix = '{{prefix}}'
+  var defaultX = '{{defaultX}}'
+  var album_name = '{{album_name}}'
+</script>
+<script src={{prefix+'/assets/js/$.js'}} defer></script>
+<script src={{prefix+'/assets/js/pay.js'}} defer></script>
+<script src={{prefix+'/assets/js/videoList.js'}} defer></script>
+</body>
+</html>

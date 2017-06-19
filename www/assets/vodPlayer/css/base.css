@@ -1,0 +1,202 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-size:20px;
+	font-family:"黑体";
+	margin:0px;
+	color:#FFF;
+	/*background: #000 url(../images/bg.jpg) no-repeat;*/
+	line-height:30px;
+}
+.clear{ clear:both;}
+ul,li,form,dl,dt,dd,h1,h2,h3,p{
+	padding:0;
+	margin:0; 
+	list-style:none;}	
+
+a,img {
+        /*star:expression(this.onFocus=this.blur()); */
+	text-decoration: none;
+    outline:none;
+}
+#begin_time{
+	position:absolute;
+	left:114px;
+	top:555px;
+	width: 100px;
+	text-align:center;
+}		
+#end_time{
+	position:absolute;
+	left:955px;
+	top:555px;
+	width: 95px;
+	text-align:center;
+}						
+#play_time{
+	position:absolute;
+	left:473px;
+	top:500px;
+	text-align:center;
+	width: 229px;
+}	
+#play_program{
+	position:absolute;
+	left:290px;
+	top:605px;
+	font-size:24px;
+	text-align:center;
+	width:600px;
+}	
+/*------------------------------  定位  -------------------------------*/
+#location_bg{
+	position:absolute;
+	left:470px;
+	top:300px;}
+
+#location{
+	position:absolute;
+	left:577px;
+	top:324px;
+	width: 129px;
+	height: 26px;
+}
+/*------------------------------回放_快进-------------------------------*/
+/*#g_track{
+	background:url(../images/track_bg.png) no-repeat;
+	position:absolute;
+	left:900px;
+	top:63px;
+	width:155px;
+	height:62px;
+	font-size:26px;
+	line-height:62px;
+	text-align:center;
+	}*/
+#g_button{
+	position:absolute;
+	left:1054px; /*1084*/
+	top:48px;/*122px*/
+	}
+#g_speed{
+	position:absolute;
+	left:1132px;/*1160*/
+	top:63px; /*137*/
+	font-size:46px;
+	line-height:46px;}
+#g_bg{
+	position:absolute;
+	left:98px;
+	top:491px;
+	background:url(../images/g_bg_1.png) no-repeat;
+	width:1046px;
+	height:163px;}
+#g_c{
+	position:absolute;
+	top:559px;
+	left:233px;}
+#cicle{
+	position:absolute;
+	left:220px;
+	top:548px;}
+/*------------------------------回放_退出 -------------------------------*/
+#live_bg{
+	position:absolute;
+	left:100px;
+	top:488px;
+	background:url(../images/g_bg_1.png) no-repeat;
+	width:1037px;
+	height:191px;}
+#live_p{
+	position:absolute;
+	left:252px;
+	top:499px;
+	font-size:24px;
+	text-align:center;
+	width:740px;
+	}
+#tc_time{
+	position:absolute;
+	left:139px;
+	top:554px;
+	width:80px;
+	height:30px;}
+
+#l_position{
+	position:absolute;
+	left:489px;
+	top:356px;
+	background:url(../images/l_position.png) no-repeat;
+	width:259px;
+	height:74px;}
+#l_position ul{
+	padding-top:23px;
+	padding-left:130px;}
+#l_position ul li{
+	font-size:26px;}
+
+/********************* check out *********************/
+#checkout{
+	position:absolute;
+	top:248px;
+	left:449px;
+	background:url(../images/tip.png) no-repeat;
+	width:432px;
+	height:226px;}
+#checkout ul{
+	padding-top:178px;
+	padding-left:139px;}
+#checkout ul li{
+	float:left;
+	padding-right:24px;}
+#checkoutContent{
+	position:absolute;
+	top:334px;
+	left:462px;
+	font-size:26px;
+	width: 362px;
+}
+/********************* voice *********************/
+#vo{
+	position:absolute;
+	top:582px;
+	left:233px;
+	z-index:1;}
+.vo_g{
+	position:absolute;
+	left:338px;
+	top:601px;
+	z-index:3;}
+.vo_gre{
+	position:absolute;
+	left:338px;
+	top:607px;
+	z-index:2;}
+.vo_vo{
+	position:absolute;
+	left:965px;
+	top:595px;
+	color:#fff;
+	font-size:26px;
+}
+#imgProcess{
+	position:absolute;
+	left:600px; 
+	top:280px;
+}
+/************************* exit ***************************/
+#exit{
+	position:absolute;
+	top:248px;
+	left:449px;
+	background:url(../images/tip.png) no-repeat;
+	width:382px;
+	height:226px;
+	}
+#exit ul{
+	padding-top:178px;
+	padding-left:79px;}
+#exit ul li{
+	float:left;
+	padding-right:24px;}

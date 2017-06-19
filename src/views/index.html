@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取用户CardId</title>
+  <link rel="stylesheet" href={{location+'/assets/css/common.css'}}>
+  <style>
+    #tip {
+      text-align: center;
+      font-size: 38px;
+      color: red;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="tip"></div>
+</div>
+<script>
+  var cbsHost = '{{cbsHost}}'
+  var areacode = '{{areacode}}';
+  var websitecode = '{{websitecode}}';
+  var prefix = '{{location}}';
+</script>
+<script type="text/javascript" src={{location+'/assets/js/$.js'}} defer></script>
+<script>
+  window.onload = function () {
+    function queryOrderList(cb) {
+      $.ajax({
+        url: cbsHost + '/product/queryorderlist',
+        data: {
+          usercode: $.getCookie('usercode'),
+          user_session: $.getCookie('user_session')
+        },
+        success: function (res) {
+          if (res.retcode == 0) {//操作成功 返回订购信息
+            cb(res.data)
+          } else {
+            cb(-1)
+          }
+        },
+        fail: function () {
+          cb(-1)
+        }
+      })
+    }
+
+    var terminalusermark = $.getCardId() || 'demo123456'
+    $.ajax({
+      url: cbsHost + '/auth/userauth',
+      data: {
+        areacode: areacode,
+        tpsitecode: websitecode,
+        terminalusermark: terminalusermark,
+        terminalinfo: escape('CardID=' + terminalusermark)
+      },
+      success: function (r) {
+        if (r.retcode == 0) {
+          $.setCookie('areacode', areacode)
+          $.setCookie('usercode', r.data.usercode)
+          $.setCookie('user_session', r.data.usersession)
+          $.setCookie('websitecode', websitecode)
+
+          //查询用户是否订购产品包 isVip -1查询失败 0 未订购或产品到期 1已经是会员
+          queryOrderList(function (res) {
+            if (res == -1) {
+              $.setCookie('isVip', -1)
+            } else {
+              if (res && res.length == 0) {
+                $.setCookie('isVip', 0)
+              } else if (res && res.length > 0) {
+                //获取最近一次的订购记录
+                var expiredTime = res[0].expiredtime
+                var formatTime = $.formatTime(expiredTime)
+                if (formatTime < +new Date()) {
+                  //会员已到期
+                  $.setCookie('isVip', 0)
+                } else {
+                  $.setCookie('isVip', 1)
+                }
+              }
+            }
+            //进入主页面
+            return $.redirect(prefix + '/main?' + 'menuIndex=1&page=0')
+          })
+        } else {
+          //登陆失败
+        }
+
+      }
+      ,
+      fail: function () {
+        //登陆失败
+      }
+    })
+
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+//栏目样式
+.column {
+  width: 1152px;
+  height: 199px;
+  //overflow: hidden;
+  margin-bottom: 16px;
+  .title {
+    font-size: 26px;
+    margin-bottom: 14px;
+    i {
+      font-style: normal;
+    }
+    .count {
+      visibility: hidden;
+    }
+  }
+
+  ul {
+    width: 1152px;
+    height: 150px;
+    position: relative;
+  }
+  li {
+    width: 268px;
+    height: 150px;
+    margin: 0 10px;;
+    float: left;
+    position: relative;
+    border-radius: 4px;
+    border: 4px solid transparent;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
+    }
+    .name {
+      width: 100%;
+      height: 30px;
+      line-height: 36px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      text-align: center;
+      font-size: 20px;
+      background: url(../img/title_bg.png) no-repeat center;
+      //background-color: rgba(0, 0, 0, .5);
+      //background-color: #0A203F;
+      //opacity: .5;
+    }
+  }
+}

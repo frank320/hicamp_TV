@@ -1,0 +1,62 @@
+.vip {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+.vip .title {
+  margin: 10px 0;
+}
+.vip .info {
+  width: 100%;
+  height: 100%;
+}
+.vip .info .extraInfo {
+  width: 600px;
+  line-height: 36px;
+  font-size: 24px;
+  display: inline-block;
+}
+.vip .info .orders {
+  width: 900px;
+  margin: 40px auto;
+  overflow: hidden;
+}
+.vip .info .orders .order {
+  float: left;
+  width: 200px;
+  height: 110px;
+  margin: 0 12.5px;
+  background-color: #304073;
+  border-radius: 4px;
+  border: 4px solid transparent;
+  box-sizing: border-box;
+}
+.vip .info .orders .order div {
+  margin-top: 10px;
+}
+.vip .info .orders .order .type {
+  font-size: 22px;
+}
+.vip .info .orders .order .price {
+  font-size: 16px;
+}
+.vip .info .orders .order .totalPrice {
+  font-size: 24px;
+  color: #FF9849;
+}
+.vip .info .btns div {
+  display: inline-block;
+  width: 160px;
+  height: 50px;
+  font-size: 26px;
+  line-height: 50px;
+  background-color: #2D92D6;
+  border-radius: 30px;
+  border: 4px solid transparent;
+  margin: 15px 30px;
+}
+.vip .info .vipState {
+  margin-top: 20px;
+  font-size: 28px;
+}

@@ -1,0 +1,10 @@
+/node_modules/
+.idea
+*.log
+npm-debug.log*
+hicamp_TV_chongqing.iml
+test/*
+resource
+dist
+public
+

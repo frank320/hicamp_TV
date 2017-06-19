@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>嗨学营</title>
+  <link rel="stylesheet" href={{location+"/assets/css/common.css"}}>
+  <link rel="stylesheet" href={{location+"/assets/css/columns.css"}}>
+</head>
+<body>
+
+<div class="container" style='position: relative'>
+  {{if page==0}}
+  <div class="useTip" style='position: absolute;font-size:20px;top: 40px;width: 1152px;text-align: right;color: #B5B0AC;'>
+     提示:<span style='border:1px solid white'>确认</span>选定内容并在首页展示,二次<span style='border:1px solid white'>确认</span>取消选定
+  </div>
+  {{/if}}
+  <!--首页展示栏目-->
+  {{each columns as value index}}
+  <div class="column">
+    <div class="title">
+      <span>{{value.category_name}} </span><span class='count'>( <i>1</i>  / {{value.totalcount}} )</span>
+    </div>
+    {{if value.data.length!=0}}
+    <ul>
+      {{each value.data as value index}}
+      <li contentcode={{value.contentcode}} isalbum={{value.isalbum}} collecttype={{codeArray.indexOf(value.contentcode)!=-1?1:0}} style='position: relative'>
+        {{if codeArray.indexOf(value.contentcode)!=-1}}
+        <!--成功按钮图标-->
+        <div class="videoIcon" id='videoIcon' style='position: absolute;z-index: 99;left: 100px;top: 40px;'>
+          <img src="{{location+'/assets/img/button_finish.png'}}" style='width: 70px;height: 70px;'>
+        </div>
+        {{/if}}
+        <img
+          src={{value.posterurl}}
+          alt="">
+        <div class="name">{{value.contentname.slice(0,11)}}</div>
+      </li>
+      {{/each}}
+    </ul>
+    {{/if}}
+  </div>
+  {{/each}}
+  <!--上下翻页箭头-->
+  {{if maxPage>0&&maxPage==page}}
+  <div id="upArrow" style='position: absolute;top: 14px;left: 609px;'>
+    <img src="{{location+'/assets/img/up_arrow.gif'}}" alt="" style='width: 60px;height: 30px;'>
+  </div>
+  {{/if}}
+  {{if maxPage>page}}
+  <div id="downArrow" style='position: absolute;bottom: 14px;left: 609px;'>
+    <img src="{{location+'/assets/img/down_arrow.gif'}}" alt="" style='width: 60px;height: 30px;'>
+  </div>
+  {{/if}}
+
+</div>
+
+<script>
+  var page = '{{page}}'
+  var maxPage = '{{maxPage}}'
+  var menuIndex = '{{menuIndex}}'
+  var prefix = '{{location}}'
+  var defaultX = '{{defaultX}}'
+  var defaultY = '{{defaultY}}'
+  var cbsHost = '{{cbsHost}}'
+</script>
+<script src={{location+'/assets/js/$.js'}} defer></script>
+<script src={{location+'/assets/js/filter.js'}} defer></script>
+</body>
+</html>

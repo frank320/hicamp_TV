@@ -1,0 +1,38 @@
+{
+  "name": "hicamp_TV_tianjin",
+  "version": "1.0.0",
+  "description": "嗨学营 儿童电视 演示版",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node-dev index.js",
+    "build": "gulp build",
+    "clean": "gulp clean",
+    "dist": "pm2 start app.json"
+  },
+  "author": "frank",
+  "license": "ISC",
+  "dependencies": {
+    "art-template": "^3.0.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.3",
+    "express": "^4.14.0",
+    "glob": "^7.0.5",
+    "node-fetch": "^1.6.3",
+    "request": "^2.75.0",
+    "xml": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.13.2",
+    "babel-register": "^6.11.6",
+    "cross-env": "^3.1.3",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-uglify": "^2.0.0",
+    "pm2": "^2.4.6"
+  }
+}

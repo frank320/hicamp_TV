@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vip</title>
+  <link rel="stylesheet" href={{location+"/assets/css/common.css"}}>
+  <link rel="stylesheet" href={{location+"/assets/css/vip.css"}}>
+</head>
+<body>
+<div class="container">
+  <div class="vip">
+    <div class="info">
+      <div class="title">
+        <img src="{{location+'/assets/img/vipLogo.png'}}" alt="">
+      </div>
+      <div class="extraInfo">
+        包月订购后成为<b>【儿童电视】</b>会员,可以观看所有内容资源,
+        订购费用从在您登记的有线电视账户划转
+      </div>
+      <div class="orders" id='orders'>
+        {{each orders as value index}}
+        <div class="order" productno={{value.productno}}>
+          <div class="type">{{value.vipType}}</div>
+          <div class="price">({{value.pricePerMonth}} 元/月)</div>
+          <div class="totalPrice">￥ {{value.totalPrice}}</div>
+        </div>
+        {{/each}}
+      </div>
+      <div class="btns" id='btns'>
+        <div class='confirm'>确认订购</div>
+        <div class='cancle'>取消</div>
+      </div>
+      <div class="vipState" id='vipState'>
+        会员信息:
+      </div>
+    </div>
+  </div>
+  <!--弹框提示-->
+  <div class='tip' id='tip' style='position: absolute;z-index: 8'>
+    <div class='title'>确认订购吗？</div>
+    <div class='btns'>
+      <div class='no'>取消</div>
+      <div class='yes'>确认</div>
+    </div>
+  </div>
+  <!--儿童锁弹窗-->
+  <div class='tip' id='childLock' style='position: absolute;z-index: 8'>
+    <div class='title' style='font-size: 24px'>请输入运算结果,按左键可清除输入内容</div>
+    <div class='info' style='margin:0 10px;font-size: 60px'>
+      <span></span>
+      <span></span><span style='color: #B5B0AC;visibility:visible;'>|</span>
+    </div>
+  </div>
+  <!--支付结果弹窗-->
+  <div class='tip' id='payTip' style='position: absolute;z-index: 8'>
+    <div class='title' style='font-size: 28px;margin-top: 90px;'>正在下单支付,请稍后...</div>
+  </div>
+</div>
+<script>
+  var prefix = '{{location}}'
+  var cbsHost = '{{cbsHost}}'
+</script>
+<script src={{location+'/assets/js/$.js'}} defer></script>
+<script src={{location+'/assets/js/pay.js'}} defer></script>
+<script src={{location+'/assets/js/vip.js'}} defer></script>
+</body>
+</html>

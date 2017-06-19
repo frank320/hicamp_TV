@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>嗨学营</title>
+  <link rel="stylesheet" href={{location+'/assets/css/common.css'}}>
+  <link rel="stylesheet" href={{location+'/assets/css/main.css'}}>
+</head>
+<body>
+<div class="container">
+  <div class="main" id='main'>
+    <div class="menu" id='menu'>
+      <div class="title">
+        <span>{{menuName}} </span><span class='count'>( <i>1</i> / {{menuItems.length}} )</span>
+      </div>
+
+      <ul>
+        {{each menuItems as value index}}
+        {{ if value.navname=='父母挑选' }}
+        <li targetUrl={{'filter/'+value.categorycode+'?page=0&menuIndex='+value.index}}>
+          {{/if}}
+          {{ if value.navname!='父母挑选' }}
+        <li targetUrl={{'menu/'+value.categorycode+'?page=0&menuIndex='+value.index}}>
+          {{/if}}
+          <div class="wrap" style='background-color: {{value.bgc}};'>
+            <div class="iconAvatar">
+              <img src={{assets_host+value.columnimg}} alt="">
+            </div>
+            <span>{{value.navname}}</span>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    <!--我和我的小伙伴-->
+    <div class="parteners" id='parteners'>
+      <div class="title">
+        <span>{{myfellow.category_name}} </span><span class='count'>( <i>1</i>  / {{myfellow.data.length+1}} )</span>
+      </div>
+      <ul>
+        <li>
+          <img
+            src={{location+'/assets/img/default_avatar.png'}}>
+        </li>
+        {{each myfellow.data as value index}}
+        <li contentcode={{value.contentcode}} isalbum={{value.isalbum}}>
+          <img
+            src={{value.smimgurl}}>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    <!--首页展示栏目-->
+    <div class="column">
+      <div class="title">
+        <span>{{column.category_name?column.category_name:columnName}} </span><span class='count'>( <i>1</i>  / {{column.totalcount?column.totalcount:column.data.length}} )</span>
+      </div>
+      {{if column.data.length!=0}}
+      <ul>
+        {{each column.data as value index}}
+        <li contentcode={{value.contentcode}} isalbum={{value.isalbum}}>
+          <img
+            src={{value.posterurl}}
+            alt="">
+          <div class="name">{{value.contentname.slice(0,11)}}</div>
+        </li>
+        {{/each}}
+      </ul>
+      {{/if}}
+    </div>
+    <!--退出应用时弹框提示-->
+    <div class='tip' id="tip" style='position: absolute;z-index: 8'>
+      <div class="title">确认退出吗？</div>
+      <div class="btns">
+        <div class='no'>取消</div>
+        <div class='yes'>确认</div>
+      </div>
+    </div>
+  </div>
+  <!--向下翻页箭头-->
+  <div id="downArrow" style='position: absolute;bottom: 14px;left: 609px;display: none'>
+    <img src="{{location+'/assets/img/down_arrow.gif'}}" alt="" style='width: 60px;height: 30px;'>
+  </div>
+  <!--播放按钮图标-->
+  <div class="videoIcon" id='videoIcon' style='position: absolute;z-index: 99;display: none;'>
+    <img alt="" width=70 height=70>
+  </div>
+</div>
+<script>
+  //发给前端时携带page maxPage menuIndex等变量
+  var page = '{{page}}';
+  var maxPage = '{{maxPage}}';
+  var menuIndex = '{{menuIndex}}';
+  var prefix = '{{location}}';
+  var defaultX = '{{defaultX}}';
+  var defaultY = '{{defaultY}}';
+</script>
+<script src={{location+'/assets/js/$.js'}} defer></script>
+<script src={{location+'/assets/js/main.js'}} defer></script>
+</body>
+
+</html>
