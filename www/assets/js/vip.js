@@ -104,6 +104,10 @@ function startPay() {
   pay.createOrder(producecode, payReturnUrl, function (orderno) {
       //演示用
       payTip.children[0].innerHTML = '订购失败,请重试...'
+      setTimeout(function () {
+        flag = 2
+        payTip.style.display = 'none'
+      }, 1000)
       return
       if (orderno == -1) {
         payTip.children[0].innerHTML = '订购失败,请重试...'
