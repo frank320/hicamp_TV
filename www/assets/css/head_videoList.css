@@ -20,7 +20,7 @@
 }
 .column .bundle .detail {
   height: 100%;
-  width: 500px;
+  width: 540px;
   padding: 10px;
   margin-top: 20px;
   float: right;
@@ -35,7 +35,7 @@
 .column .bundle div span {
   height: 100%;
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 .column .bundle div span img {
   height: 100%;
