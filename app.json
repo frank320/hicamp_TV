@@ -10,7 +10,7 @@
     "PORT": 8088,
     "PARENT_CHOOSE_LIMIT": 10,
     "USE_HISTORY_LIMIT": 10,
-    "LOCATION": "/tv",
+    "LOCATION": "/demo",
     "TPS_HOST": "http://47.93.116.9:15025",
     "CBS_HOST": "http://47.93.116.9:15045",
     "ASSETS_HOST": "http://47.93.116.9:15020/Application",
