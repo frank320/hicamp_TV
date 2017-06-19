@@ -102,6 +102,9 @@ function startPay() {
   var producecode = orders[focusOrderIndex].getAttribute('productno')
   var payReturnUrl = $.getCookie('payReturnUrl')
   pay.createOrder(producecode, payReturnUrl, function (orderno) {
+      //演示用
+      payTip.children[0].innerHTML = '订购失败,请重试...'
+      return
       if (orderno == -1) {
         payTip.children[0].innerHTML = '订购失败,请重试...'
         setTimeout(function () {
