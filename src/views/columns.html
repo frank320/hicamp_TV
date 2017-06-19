@@ -19,7 +19,7 @@
       {{each value.data as value index}}
       <li contentcode={{value.contentcode}} isalbum={{value.isalbum}}>
         <img
-          src={{value.posterurl}}
+          src={{location+value.posterurl}}
           alt="">
         <div class="name">{{value.contentname.slice(0,11)}}</div>
       </li>
