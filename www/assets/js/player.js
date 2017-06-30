@@ -4,7 +4,7 @@
 
   var player = document.getElementById('player')
 
-  flowplayer('player', prefix + '/assets/swf/flowplayer-3.2.18.swf', {
+  flowplayer('player', prefix + '/assets/flowplayer/flowplayer.swf', {
     onLoad: function () {
       //视频默认获取焦点
       player.getElementsByTagName('object')[0].focus()
@@ -12,16 +12,9 @@
     wmode: "opaque",
     clip: {
       autoPlay: true,
-      autoBuffering: true,
-      provider: "flashls",
-      urlResolvers: "flashls",
-      start: 5,
+      start: 0,
+      scaling: 'scale',//全屏播放
       url: videoUrl
-    },
-    plugins: {
-      flashls: {
-        url: prefix + '/assets/swf/flashlsFlowPlayer.swf'
-      }
     },
     onStart: function () {
     },

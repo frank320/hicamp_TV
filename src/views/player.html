@@ -5,16 +5,19 @@
   <title>video demo</title>
   <link rel="stylesheet" href={{location+'/assets/css/common.css'}}>
 </head>
+<script type="text/javascript" src={{location+'/assets/flowplayer/flowplayer.min.js'}}></script>
 <body>
 <!--flash播放 pc端演示-->
-<div id="player" class="player" style="width:1280px;height:720px;">
+<div
+  style="display:block;width:1280px;height:720px"
+  id="player">
 </div>
 <script>
   var prefix = '{{location}}'
   var videoUrl = '{{videoUrl}}'
+  //  flowplayer("player", "{{location+'/assets/flowplayer/flowplayer.swf'}}")
 </script>
 <script src={{location+'/assets/js/$.js'}} defer></script>
-<script src={{location+'/assets/swf/flowplayer-3.2.13.min.js'}} defer></script>
 <script src={{location+'/assets/js/player.js'}} defer></script>
 </body>
 </html>

@@ -113,13 +113,12 @@ function enterControl() {
   var localUrl = window.location.href.replace(/defaultX=\d+/, 'defaultX=' + xIndex).replace(/page=\d+/, 'page=' + page)
 
   //进入播放页面
-  if (window.navigator.platform.indexOf('Linux') != -1) {
-    return errTip()
-  } else {
+  if (window.navigator.platform.indexOf('Win') != -1 || window.navigator.platform.indexOf('win') != -1) {
     //pc平台 正常播放
-    var videoUrl = prefix + '/static/demoVideo/' + album_name + '.m3u8'
     $.setCookie('playBackUrl', localUrl)
-    return $.redirect(prefix + '/player?videoUrl=' + videoUrl)
+    return $.redirect(prefix + '/player?videoName=' + album_name)
+  } else {
+    return errTip()
   }
 }
 

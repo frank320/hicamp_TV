@@ -13,7 +13,7 @@ const router = Router()
 router.prefix = config.location
 
 router.get('/player', (req, res)=> {
-  const videoUrl = req.query.videoUrl
+  const videoUrl = `${config.location}/video/${req.query.videoName}`
   res.render('player', {location: config.location, videoUrl: videoUrl})
 
 })
