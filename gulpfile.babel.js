@@ -36,13 +36,13 @@ gulp.task('compressCss', [], ()=> {
     .pipe(plugins.cssnano())
     .pipe(gulp.dest('./public'))
 })
-gulp.task('swf', [], () => {
+gulp.task('flowplayer', [], () => {
   // base 指定输出时文件的基础路径（排除掉的路径）
-  return gulp.src('./www/assets/swf/**/*', {base: './www'})
+  return gulp.src('./www/assets/flowplayer/**/*', {base: './www'})
     .pipe(gulp.dest('./public'))
 })
 
 gulp.task('build', ['clean'], () => {
-  const taskArray = ['compile', 'views', 'uglifyJs', 'compressCss', 'compressImg', 'swf']
+  const taskArray = ['compile', 'views', 'uglifyJs', 'compressCss', 'compressImg', 'flowplayer']
   return gulp.start(taskArray)
 })
