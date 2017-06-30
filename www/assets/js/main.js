@@ -332,6 +332,7 @@ function grabEvent(event) {
       enterControl()
       return 0
       break
+    case 27:
     case 640:
       //退出应用
       showTip(tip)

@@ -290,6 +290,7 @@ function grabEvent(event) {
       //回车键
       enterControl()
       return 0
+    case 27:
     case 640:
       //页面返回
       if (flag == 1) {
@@ -298,7 +299,7 @@ function grabEvent(event) {
         $.redirect(backUrl)
       }
       return 0
-     case 8:
+    case 8:
       //页面返回
       if (flag == 1) {
         var backUrl = $.getCookie('backUrl')

@@ -270,6 +270,7 @@ function grabEvent(event) {
       event.preventDefault()
       enterControl()
       return 0
+    case 27:
     case 640:
       //返回键
       if (flag == 2) {
@@ -293,7 +294,6 @@ function grabEvent(event) {
 
     case 48:
       //0键
-      event.preventDefault()
       //window.location.reload()
       verifyLock(0)
       return 0

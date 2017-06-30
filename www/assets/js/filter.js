@@ -216,12 +216,13 @@ function grabEvent(event) {
       event.preventDefault()
       enterControl()
       return 0
+    case 27:
     case 640:
       event.preventDefault()
       //页面返回
       $.redirect(prefix + '/main?' + 'page=0&menuIndex=' + menuIndex)
       return 0
-     case 8:
+    case 8:
       event.preventDefault()
       //页面返回
       $.redirect(prefix + '/main?' + 'page=0&menuIndex=' + menuIndex)

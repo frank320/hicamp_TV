@@ -126,7 +126,7 @@ function enterControl() {
   }
   $.setCookie('backUrl', backUrl)
   //进入视频列表页面  需传入bid参数
-  $.redirect(prefix + '/videoList/' + contentcode+'?page=1&defaultX=0')
+  $.redirect(prefix + '/videoList/' + contentcode + '?page=1&defaultX=0')
 }
 
 
@@ -189,6 +189,7 @@ function grabEvent(event) {
       event.preventDefault()
       enterControl()
       return 0
+    case 27:
     case 640:
       event.preventDefault()
       //页面返回
