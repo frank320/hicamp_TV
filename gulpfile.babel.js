@@ -6,7 +6,7 @@ import del from 'del'
 // 自动载入所有gulp开头的模块
 const plugins = gulpLoadPlugins()
 
-gulp.task('clean', del.bind(null, ['dist','public']))
+gulp.task('clean', del.bind(null, ['dist', 'public']))
 
 gulp.task('compile', [], () => {
   return gulp.src('./src/**/*.js')
@@ -16,7 +16,7 @@ gulp.task('compile', [], () => {
 
 gulp.task('views', [], () => {
   // base 指定输出时文件的基础路径（排除掉的路径） 即输出的文件在views文件夹下
-  return gulp.src('./src/views/**/*', { base: './src' })
+  return gulp.src('./src/views/**/*', {base: './src'})
     .pipe(gulp.dest('./dist'))
 })
 
@@ -36,8 +36,13 @@ gulp.task('compressCss', [], ()=> {
     .pipe(plugins.cssnano())
     .pipe(gulp.dest('./public'))
 })
+gulp.task('swf', [], () => {
+  // base 指定输出时文件的基础路径（排除掉的路径）
+  return gulp.src('./www/assets/swf/**/*', {base: './www'})
+    .pipe(gulp.dest('./public'))
+})
 
 gulp.task('build', ['clean'], () => {
-  const taskArray = ['compile', 'views', 'uglifyJs', 'compressCss', 'compressImg']
+  const taskArray = ['compile', 'views', 'uglifyJs', 'compressCss', 'compressImg', 'swf']
   return gulp.start(taskArray)
 })
