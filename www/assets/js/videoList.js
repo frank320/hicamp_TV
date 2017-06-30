@@ -112,106 +112,15 @@ function enterControl() {
   //返回时的地址
   var localUrl = window.location.href.replace(/defaultX=\d+/, 'defaultX=' + xIndex).replace(/page=\d+/, 'page=' + page)
 
-  //是否去订购
-  if (flag == 0 && btnFocus == 1) {
-    //去订购页面
-    $.setCookie('payReturnUrl', localUrl)
-    return $.redirect(prefix + '/vip')
-  } else if (flag == 0 && btnFocus == 0) {
-    //取消去订购页面
-    return hideorderTip()
+  //进入播放页面
+  if (window.navigator.platform.indexOf('Linux') != -1) {
+    return errTip()
+  } else {
+    //pc平台 正常播放
+    var videoUrl = prefix + '/static/demoVideo/' + album_name + '.m3u8'
+    $.setCookie('playBackUrl', localUrl)
+    return $.redirect(prefix + '/player?videoUrl=' + videoUrl)
   }
-
-  //获取VOD点播串 cb函数参数说明 -1获取失败  其他 rtsp点播串
-  function getRtspUrl(paramObj, cb) {
-    var url = 'http://43.247.148.246:8080/playurl/getOnDemandUrl.do'
-    $.ajax({
-      url: url,
-      data: paramObj,
-      success: function (res) {
-        if (res.returnCode == 0) {
-          cb(res.rtspUrl)
-        } else {
-          cb(-1)
-        }
-      },
-      fail: function () {
-        cb(-1)
-      }
-    })
-  }
-
-  //获取rtsp点播串 测试
-  var tryFlag = 1
-  var paramObj = {
-    areaCode: $.getAreaCode(),
-    //assetID: vid + '002',
-    assetID: 'JYCM201705090000004Y',
-    providerID: 'JYCM',
-    userCode: $.getUserId(),
-    tryFlag: tryFlag,//1 试看   0订购使用,
-    //goodsCode: '',//已购买使用的商品编码 当 trayFlag=0或者未填写 必填
-    columnId: album_name//栏目ID 可做统计使用
-  }
-  getRtspUrl(paramObj, function (res) {
-    if (res == -1) {
-      return errTip()
-    } else {
-      var rtsp = res
-      //测试播放器
-      $.setCookie('rtspUrl', rtsp)
-      $.setCookie('videoListUrl', localUrl)
-      window.location.replace(prefix + '/player')
-      //完整播放器
-      //function setGlobalVar(sName, sValue) {
-      //  try {
-      //    Utility.setEnv(sName, sValue);
-      //  } catch (e) {
-      //    $.setCookie(sName, sValue)
-      //  }
-      //}
-      //
-      ////获取到RTSP串成功之后，需要设置4个全局变量，供播放器使用
-      //setGlobalVar("vod_play_type", tryFlag);//0正常点播  1试看
-      //setGlobalVar("vod_ctrl_rtsp", rtsp);//将RTSP串设置为全局变量
-      //setGlobalVar("displayName", contentname);//将片名设置为全局变量
-      //setGlobalVar("vod_ctrl_backurl", localUrl);//将点播完成之后，需要返回的页面地址设为全局变量
-      //window.location.replace(prefix + '/assets/vodPlayer/vodplay.html');//播放器地址URL
-    }
-  })
-
-  //产品订购签权 可在用户第一次进入应用时调用并记录签权结果
-  //测试用产品包
-  //var productcode = 'product01'
-  //pay.productauth(productcode, function (res) {
-  //  if (res == -1) {
-  //    //操作失败
-  //    errTip()
-  //  } else {
-  //    if (res && res.productorderno) {
-  //      var expiredtime = $.formatTime(res.expiredtime)
-  //      if (expiredtime > +new Date()) {//订购产品在有效期内
-  //        //播放
-  //        playVideo(vid)
-  //      }
-  //    } else {
-  //      //未订购或到期
-  //      showOrderTip()
-  //    }
-  //  }
-  //})
-
-  //var isVip = $.getCookie('isVip')
-  //if (isVip == 1) {
-  //  //是会员 直接播放视频
-  //} else if (isVip == 0) {
-  //  //非会员或者会员到期
-  //  showOrderTip()
-  //} else {
-  //  //查询失败  重新查询一次啊
-  //}
-
-
 }
 
 
