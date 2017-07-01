@@ -5,6 +5,7 @@
 import {Router} from 'express'
 import {config} from '../config'
 import ffmpeg from 'fluent-ffmpeg'
+import fs from 'fs'
 
 const router = Router()
 router.prefix = config.location
