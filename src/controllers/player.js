@@ -22,7 +22,7 @@ router.get('/player', (req, res)=> {
 //h5 tag video  page
 router.get('/videoPlayer', (req, res)=> {
   const videoUrl = `${config.location}/videoPlay/${req.query.videoName}`
-  res.render('video', {poster: req.query.poster, videoUrl: videoUrl})
+  res.render('video', {location: config.location, poster: req.query.poster, videoUrl: videoUrl})
 })
 
 export default router
