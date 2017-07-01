@@ -12,7 +12,6 @@
     clip: {
       autoPlay: true,
       autoBuffering: true,
-      live: true,
       start: 0,
       scaling: 'scale',//全屏播放
       url: videoUrl

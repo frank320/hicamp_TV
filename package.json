@@ -4,7 +4,7 @@
   "description": "嗨学营 儿童电视 演示版",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node-dev index.js",
+    "dev": "node index.js",
     "build": "gulp build",
     "clean": "gulp clean",
     "dist": "pm2 start app.json"
