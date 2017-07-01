@@ -10,7 +10,7 @@ import fs from 'fs'
 const router = Router()
 router.prefix = config.location
 
-//ffmpeg转码成直播流播放视频
+//ffmpeg实时转码成直播流播放视频
 router.get('/video/:videoName', (req, res)=> {
   res.contentType('flv')
   //const videoPath = 'C:\\Users\\wikeL\\Desktop\\HICAMP\\hicamp_tv_demo\\video\\' + req.params.videoName + '.ts'

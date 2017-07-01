@@ -19,16 +19,17 @@
   </style>
 </head>
 <body>
-<video id='player' src="{{videoUrl}}" autoplay></video>
+<video id='player' src="{{videoUrl}}" autoplay poster='{{poster}}'></video>
 </body>
 <script>
+  document.onkeydown = grabEvent
   function goBack() {
     $.redirect($.getCookie('playBackUrl'))
   }
   var video = document.getElementById('player')
   //按键事件函数
   function grabEvent(event) {
-    var keycode = event.keyCode;
+    var keycode = event.keyCode
     switch (keycode) {
       case 27:
         //返回键

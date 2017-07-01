@@ -119,7 +119,7 @@ function enterControl() {
     //ffmpeg直播流播放
     //return $.redirect(prefix + '/player?videoName=' + album_name + '.ts')
     //流播放
-    return $.redirect(prefix + '/videoPlayer?videoName=' + album_name + '.mp4')
+    return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
   } else {
     return errTip()
   }
