@@ -9,10 +9,11 @@ import ffmpeg from 'fluent-ffmpeg'
 const router = Router()
 router.prefix = config.location
 
+//ffmpeg转码成直播流播放视频
 router.get('/video/:videoName', (req, res)=> {
   res.contentType('flv')
   //const videoPath = 'C:\\Users\\wikeL\\Desktop\\HICAMP\\hicamp_tv_demo\\video\\' + req.params.videoName + '.ts'
-  const videoPath = `/home/demo/video/${req.params.videoName}.ts`
+  const videoPath = `/home/demo/video/${req.params.videoName}`
   ffmpeg(videoPath)
   // use the 'flashvideo' preset (located in /lib/presets/flashvideo.js)
   //  .preset('flashvideo')
@@ -39,6 +40,18 @@ router.get('/video/:videoName', (req, res)=> {
     // save to stream
     .pipe(res, {end: true});
 
+})
+
+//直接以流的形式播放
+router.get('/videoPlay/:videoName', (req, res)=> {
+  const videoPath = `/home/demo/video/${req.params.videoName}`
+  const stat = fs.statSync(videoPath)
+  res.writeHead(200, {
+    'Content-Type': 'video/mp4',
+    'Content-Length': stat.size
+  })
+  const readableStream = fs.createReadStream(videoPath)
+  readableStream.pipe(res)
 })
 
 export default router

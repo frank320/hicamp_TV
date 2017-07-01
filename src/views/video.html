@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>video play </title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+    }
+
+    video {
+      display: block;
+      width: 1280px;
+      height: 720px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<video id='player' src="{{videoUrl}}" autoplay></video>
+</body>
+<script>
+  function goBack() {
+    $.redirect($.getCookie('playBackUrl'))
+  }
+  var video = document.getElementById('player')
+  //按键事件函数
+  function grabEvent(event) {
+    var keycode = event.keyCode;
+    switch (keycode) {
+      case 27:
+        //返回键
+        goBack()
+        break
+      case 13:
+        //enter键
+        // 切换状态
+        if (video.paused) {
+          video.play()
+        } else {
+          video.pause()
+        }
+        break
+      default:
+        break;
+    }
+  }
+</script>
+</html>
