@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, './front')))
 
 app.get('/videoPlay/:videoName', (req, res)=> {
   //const videoPath = path.join(__dirname, req.params.videoName)
-  const videoPath = `/home/demo/video/${req.params.videoName}.mp4`
+  const videoPath = `/home/demo/video/${req.params.videoName}`
   const stat = fs.statSync(videoPath)
   res.writeHead(200, {
     'Content-Type': 'video/mp4',
