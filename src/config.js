@@ -3,9 +3,9 @@
  */
 //前端地址
 const HOST = process.env.HOST || 'localhost'
-const PORT = process.env.PORT || 80
+const PORT = process.env.PORT || 8088
 //前端访问地址前缀地址
-const LOCATION = process.env.LOCATION || ''
+const LOCATION = process.env.LOCATION || '/demo'
 
 //门户信息服务地址
 const TPS_HOST = process.env.TPS_HOST || 'http://47.93.116.9:15025'

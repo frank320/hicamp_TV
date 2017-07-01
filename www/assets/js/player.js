@@ -9,9 +9,10 @@
       //视频默认获取焦点
       player.getElementsByTagName('object')[0].focus()
     },
-    wmode: "opaque",
     clip: {
       autoPlay: true,
+      autoBuffering: true,
+      live: true,
       start: 0,
       scaling: 'scale',//全屏播放
       url: videoUrl
