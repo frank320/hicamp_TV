@@ -21,12 +21,14 @@ router.get('/video/:videoName', (req, res)=> {
     .size('1280x?')
     .videoBitrate('512k')
     .videoCodec('libx264')
-    .fps(24)
+    .fps(25)
     .audioBitrate('96k')
     //.audioCodec('aac')
     //.audioFrequency(22050)
     //.audioChannels(2)
-    .outputOptions('-preset superfast')
+    //.outputOptions('-preset veryfast')
+    //.outputOptions('-preset superfast')
+    .outputOptions('-preset ultrafast')
     // setup event handlers
     .on('end', function () {
       console.log('file has been converted succesfully');
