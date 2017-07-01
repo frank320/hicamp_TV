@@ -26,7 +26,7 @@ router.get('/video/:videoName', (req, res)=> {
     //.audioCodec('aac')
     //.audioFrequency(22050)
     //.audioChannels(2)
-    .outputOptions('-preset veryfast')
+    .outputOptions('-preset superfast')
     // setup event handlers
     .on('end', function () {
       console.log('file has been converted succesfully');
