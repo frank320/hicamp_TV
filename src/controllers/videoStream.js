@@ -23,9 +23,9 @@ router.get('/video/:videoName', (req, res)=> {
     .videoCodec('libx264')
     .fps(24)
     .audioBitrate('96k')
-    //.audioCodec('aac')
-    //.audioFrequency(22050)
-    //.audioChannels(2)
+    .audioCodec('aac')
+    .audioFrequency(22050)
+    .audioChannels(2)
     .outputOptions('-preset superfast')
     // setup event handlers
     .on('end', function () {
