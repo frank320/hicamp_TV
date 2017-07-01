@@ -27,7 +27,7 @@ router.get('/video/:videoName', (req, res)=> {
     //.audioFrequency(22050)
     //.audioChannels(2)
     //.outputOptions('-preset veryfast')
-    //.outputOptions('-preset superfast')
+    //.outputOptions('-preset superfast','-c:a copy')
     .outputOptions('-preset ultrafast')
     // setup event handlers
     .on('end', function () {
