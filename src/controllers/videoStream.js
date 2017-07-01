@@ -19,13 +19,13 @@ router.get('/video/:videoName', (req, res)=> {
     .format('flv')
     .flvmeta()
     .size('1280x?')
-    .videoBitrate('3500k')
+    .videoBitrate('512k')
     .videoCodec('libx264')
     .fps(24)
-    .audioBitrate('128k')
-    .audioCodec('aac')
-    .audioFrequency(22050)
-    .audioChannels(2)
+    .audioBitrate('96k')
+    //.audioCodec('aac')
+    //.audioFrequency(22050)
+    //.audioChannels(2)
     .outputOptions('-preset veryfast')
     // setup event handlers
     .on('end', function () {
