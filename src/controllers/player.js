@@ -22,7 +22,7 @@ router.get('/player', (req, res)=> {
 //h5 tag video  page
 router.get('/videoPlayer', (req, res)=> {
   //const videoUrl = `${config.location}/videoPlay/${req.query.videoName}`
-  const videoUrl = `../../../video/${req.query.videoName}`
+  const videoUrl = `${config.location}/staticVideo/${req.query.videoName}`
   res.render('video', {location: config.location, poster: req.query.poster, videoUrl: videoUrl})
 })
 
