@@ -30,10 +30,11 @@
   function grabEvent(event) {
     var keycode = event.keyCode
     switch (keycode) {
+      case 8:
       case 27:
         //返回键
         goBack()
-        break
+        return 0
       case 13:
         //enter键
         // 切换状态
@@ -42,7 +43,7 @@
         } else {
           video.pause()
         }
-        break
+        return 0
       default:
         break;
     }
