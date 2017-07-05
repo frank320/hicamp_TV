@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <title>video play </title>
   <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+    }
 
     video {
       display: block;
@@ -19,7 +24,7 @@
   var prefix = '{{location}}'
 </script>
 <script src={{location+'/assets/js/$.js'}} defer></script>
-<video id='player' src="{{videoUrl}}" autoplay poster={{location+'/assets/img/VideoLoading.gif'}} controls></video>
+<video id='player' src="{{videoUrl}}" autoplay poster={{location+'/assets/img/videoLoading.gif'}} controls></video>
 </body>
 <script>
   document.onkeydown = grabEvent
