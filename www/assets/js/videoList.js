@@ -117,9 +117,9 @@ function enterControl() {
     //pc平台 正常播放
     $.setCookie('playBackUrl', localUrl)
     //ffmpeg直播流播放
-    //return $.redirect(prefix + '/player?videoName=' + album_name + '.ts')
+    return $.redirect(prefix + '/player?videoName=' + album_name + '.mp4')
     //流播放
-    return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
+    //return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
   } else {
     return errTip()
   }
