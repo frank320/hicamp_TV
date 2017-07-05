@@ -18,7 +18,9 @@
   var prefix = '{{location}}'
 </script>
 <script src={{location+'/assets/js/$.js'}} defer></script>
-<video id='player' src="{{videoUrl}}" autoplay poster='{{poster}}' controls></video>
+<div class="container">
+  <video id='player' src="{{videoUrl}}" autoplay poster={{location+'/assets/img/VideoLoading.gif'}} controls></video>
+</div>
 </body>
 <script>
   document.onkeydown = grabEvent
