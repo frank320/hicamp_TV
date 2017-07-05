@@ -28,6 +28,9 @@ if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
 //海报静态资源服务
 app.use(config.location + '/static', express.static(path.join(__dirname, '../resource')))
 
+//静态视频资源服务
+app.use(config.location + '/staticVideo', express.static(path.join(__dirname, '../../video')))
+
 //载入处理请求体的中间件
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
