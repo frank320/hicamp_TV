@@ -23,7 +23,7 @@ router.get('/video/:videoName', (req, res)=> {
     .size('1280x?')
     .videoBitrate('512k')
     .videoCodec('libx264')
-    .fps(25)
+    //.fps(25)
     .audioBitrate('96k')
     //.audioCodec('aac')
     //.audioFrequency(22050)
