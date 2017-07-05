@@ -14,7 +14,8 @@ router.prefix = config.location
 
 //flowplayer page
 router.get('/player', (req, res)=> {
-  const videoUrl = `${config.location}/video/${req.query.videoName}`
+  //const videoUrl = `${config.location}/video/${req.query.videoName}`
+  const videoUrl = `../../video/${req.query.videoName}`
   res.render('player', {location: config.location, videoUrl: videoUrl})
 
 })
