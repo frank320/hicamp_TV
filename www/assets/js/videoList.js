@@ -114,15 +114,17 @@ function enterControl() {
 
   //进入播放页面
   $.setCookie('playBackUrl', localUrl)
-  if (window.navigator.platform.indexOf('Win') != -1 || window.navigator.platform.indexOf('win') != -1) {
-    //pc平台 正常播放
-    //ffmpeg直播流播放
-    //return $.redirect(prefix + '/player?videoName=' + album_name + '.mp4')
-    //流播放
-    return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
-  } else {
-    return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
-  }
+  return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
+
+  //if (window.navigator.platform.indexOf('Win') != -1 || window.navigator.platform.indexOf('win') != -1) {
+  //  //pc平台 正常播放
+  //  //ffmpeg直播流播放
+  //  //return $.redirect(prefix + '/player?videoName=' + album_name + '.mp4')
+  //  //流播放
+  //  //return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
+  //} else {
+  //  return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
+  //}
 }
 
 
