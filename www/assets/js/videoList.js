@@ -121,7 +121,8 @@ function enterControl() {
     //流播放
     //return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
   } else {
-    return errTip()
+
+    return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
   }
 }
 
