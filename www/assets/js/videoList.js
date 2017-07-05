@@ -117,9 +117,9 @@ function enterControl() {
   if (window.navigator.platform.indexOf('Win') != -1 || window.navigator.platform.indexOf('win') != -1) {
     //pc平台 正常播放
     //ffmpeg直播流播放
-    //return $.redirect(prefix + '/player?videoName=' + album_name + '.mp4')
+    return $.redirect(prefix + '/player?videoName=' + album_name + '.mp4')
     //流播放
-    return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
+    //return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
   } else {
     return $.redirect(prefix + '/videoPlayer?poster=' + poster + '&videoName=' + album_name + '.mp4')
   }
