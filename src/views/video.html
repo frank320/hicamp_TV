@@ -5,29 +5,26 @@
   <title>video play </title>
   <link rel="stylesheet" href={{location+'/assets/css/common.css'}}>
   <style>
-    .wrap {
-      width: 100%;
-      height: 100%;
+    .box {
       background-color: #162A60;
+
     }
 
     video {
       display: block;
-      width: 100%;
-      height: 100%;
+      width: 1280px;
+      height: 720px;
       margin: 0;
       padding: 0;
     }
   </style>
 </head>
-<body>
+<body class='box'>
 <script>
   var prefix = '{{location}}'
 </script>
 <script src={{location+'/assets/js/$.js'}} defer></script>
-<div class="wrap">
-  <video id='player' src="{{videoUrl}}" autoplay poster={{location+'/assets/img/VideoLoading.gif'}} controls></video>
-</div>
+<video id='player' src="{{videoUrl}}" autoplay poster={{location+'/assets/img/VideoLoading.gif'}} controls></video>
 </body>
 <script>
   document.onkeydown = grabEvent
