@@ -21,9 +21,9 @@ app.set('views', __dirname + '/views')
 
 // 静态资源加载配置
 if (process.env.NODE_ENV && process.env.NODE_ENV === 'production') {
-  app.use(config.location, express.static(path.join(__dirname, '../public')))
+  app.use(config.location + '/assets', express.static(path.join(__dirname, '../public/assets')))
 } else {
-  app.use(config.location, express.static(path.join(__dirname, '../www')))
+  app.use(config.location + '/assets', express.static(path.join(__dirname, '../www/assets')))
 }
 //海报静态资源服务
 app.use(config.location + '/static', express.static(path.join(__dirname, '../resource')))
