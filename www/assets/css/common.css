@@ -5,8 +5,7 @@ body {
   padding: 0;
   color: #f1f1f1;
   font-family: "Helvetica", "Microsoft YaHei", sans-serif;
-  background: url(../img/tv_bg1.png) #000 center center no-repeat;
-  background-size: 1316px 976px;
+  background-color: #000;
 }
 .container {
   width: 100%;
