@@ -1,6 +1,9 @@
 {
   "name": "hicamp_tv_app",
   "script": "index.js",
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "instances": 0,
+  "exec_mode": "cluster",
   "args": [],
   "interpreter": "node",
   "interpreter_args": [],
